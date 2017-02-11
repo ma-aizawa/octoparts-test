@@ -1,0 +1,32 @@
+.F
+
+Failures:
+
+  1) Octoparts 
+     Failure/Error:
+       result = client.invoke(
+         requests: [{
+           part_id: '',
+         }]
+       )
+
+       #<Octoparts::Client:0x007fc16a36a410 @endpoint="http://localhost:9000", @timeout_sec=nil, @open_timeout_sec=nil, @headers={"User-Agent"=>"Octoparts client ruby/0.0.8"}> received :post with unexpected arguments
+         expected: ("/octoparts/2", "{\"requests\":[{\"part_id\":\"\",\"params\":[]}]}", {:content_type=>"application/json"})
+              got: ("/octoparts/2", "{\"requests\":[{\"partId\":\"\",\"params\":[]}]}", {:content_type=>"application/json"})
+       Diff:
+       @@ -1,4 +1,4 @@
+        ["/octoparts/2",
+       - "{\"requests\":[{\"part_id\":\"\",\"params\":[]}]}",
+       + "{\"requests\":[{\"partId\":\"\",\"params\":[]}]}",
+         {:content_type=>"application/json"}]
+
+        Please stub a default value first if message might be received with other args as well. 
+     # ./spec/test_spec.rb:24:in `block (2 levels) in <top (required)>'
+
+Finished in 0.04984 seconds (files took 0.42185 seconds to load)
+2 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/test_spec.rb:13 # Octoparts 
+
