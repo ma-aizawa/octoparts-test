@@ -26,6 +26,6 @@ describe Octoparts do
         part_id: '',
       }]
     )
-    expect(result.body).to eq('ok')
+    expect(result.body).not_to be_nil
   end
 end
